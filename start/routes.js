@@ -16,7 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-//Routes
+//Guest routes
 Route.group(() => {
   
   Route.get('/', () => {
@@ -24,5 +24,11 @@ Route.group(() => {
   })
 
   Route.post('login', 'UserController.login')
-
 }).prefix('api/v1')
+
+//Products routes
+//Using RESTful nomenclature
+Route.group(() => {
+  
+  Route.post('', 'ProductController.store')
+}).middleware(['auth']).prefix('api/v1/products')
