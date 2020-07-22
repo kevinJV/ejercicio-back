@@ -27,8 +27,12 @@ Route.group(() => {
 }).prefix('api/v1')
 
 //Products routes
-//Using RESTful nomenclature
 Route.group(() => {
+  
+  //Using RESTful nomenclature
+  Route.get('', 'ProductController.index')
+  Route.post('', 'ProductController.store').validator('StoreProduct').middleware(['auth'])
 
-  Route.post('', 'ProductController.store').validator('StoreProduct')
-}).middleware(['auth']).prefix('api/v1/products')
+  //Search method
+  Route.get('/search', 'ProductController.search').validator(['SearchProduct'])
+}).prefix('api/v1/products')
