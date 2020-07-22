@@ -29,6 +29,6 @@ Route.group(() => {
 //Products routes
 //Using RESTful nomenclature
 Route.group(() => {
-  
-  Route.post('', 'ProductController.store')
+
+  Route.post('', 'ProductController.store').validator('StoreProduct')
 }).middleware(['auth']).prefix('api/v1/products')

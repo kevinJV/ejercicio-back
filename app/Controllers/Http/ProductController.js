@@ -20,7 +20,7 @@ class ProductController {
    *
    */
   async store ({ request, response }) {
-    const { name, image, description, price, quantity } = request.only(['name', 'description', 'price', 'quantity'])
+    const { name, image, description, price, quantity } = request.only(['name', 'image','description', 'price', 'quantity'])
     let product = {}
 
     try {
