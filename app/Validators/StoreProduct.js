@@ -4,9 +4,9 @@ class StoreProduct {
   get rules () {
     return {
       // validation rules
-      name:"required",
-      image:"required",
-      description:"required",
+      name:"required|max:25",
+      // image:"required",
+      description:"required|max:50",
       price:"required",
       quantity:"required",
     }
