@@ -40,7 +40,7 @@ class ProductController {
     }
 
     return response.status(201).json({
-      msg: 'Producto creado',
+      msg: 'Product created',
       product
     })
   }
